@@ -133,7 +133,7 @@ const Header = () => {
                         <motion.li
                           variants={itemVariants}
                           key={index}
-                          className="capitalize opacity-30 text-2xl font-bold cursor-pointer hover:text-white duration-300 hover:opacity-100 text-left"
+                          className="capitalize opacity-5  text-3xl font-bold cursor-pointer hover:text-white duration-300  text-left"
                         >
                           {service}
                         </motion.li>
