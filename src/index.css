@@ -37,7 +37,7 @@
 .menuicon .line-1 {
   display: block;
   width: 90%;
-  height: 3px;
+  height: 5px;
   border-radius: 3px;
 }
 .menuicon .line-2 {
@@ -45,13 +45,13 @@
   width: 50%;
   margin-left: auto;
   margin-right: 5%;
-  height: 3px;
+  height: 5px;
   border-radius: 3px;
 }
 .menuicon .line-3 {
   display: block;
   width: 90%;
-  height: 3px;
+  height: 5px;
   border-radius: 3px;
 }
 
