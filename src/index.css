@@ -16,3 +16,63 @@
 .headText {
   opacity: 1 !important;
 }
+
+
+
+.menuicon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menuicon span {
+  transition: transform 0.5s, width 0.5s, justify-content 0.5s;
+}
+
+.menuicon .line-1 {
+  display: block;
+  width: 90%;
+  height: 3px;
+  border-radius: 3px;
+}
+.menuicon .line-2 {
+  display: block;
+  width: 50%;
+  margin-left: auto;
+  margin-right: 5%;
+  height: 3px;
+  border-radius: 3px;
+}
+.menuicon .line-3 {
+  display: block;
+  width: 90%;
+  height: 3px;
+  border-radius: 3px;
+}
+
+
+.openMenu {
+  justify-content: center;
+}
+
+.openMenu .line-1 {
+  transform: translateY(100%) rotate(-45deg);
+  background-color: white;
+  width: 95%;
+  height: 4px;
+} 
+.openMenu .line-2 {
+  background-color: white;
+  width: 0%;
+} 
+.openMenu .line-3 {
+  transform: translateY(-50%) rotate(50deg);
+  background-color: white;
+  width: 90%;
+  height: 4px;
+} 

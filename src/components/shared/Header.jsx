@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [menuToggle, setMenuToggle] = useState(false);
   const [selectedLink, setSelectedLink] = useState(0);
+  const [menuClass, setMenuClass] = useState("");
   const menuItems = [
     { name: "home", link: "/" },
     { name: "services", link: "#services" },
@@ -22,26 +23,21 @@ const Header = () => {
     { icon: <FaFacebookF />, link: "https://www.facebook.com/" },
   ];
 
-  console.log("selectedLink:", selectedLink);
-  console.log("menuToggle:", menuToggle);
+  const toggleMenu = () => {
+    setMenuToggle((prevMenuToggle) => !prevMenuToggle);
+    setMenuClass((prevMenuToggle) => (prevMenuToggle ? "" : "openMenu"));
+  };
+
   return (
     <header className="w-screen flex items-center justify-between p-5 ">
       <div className="logo"></div>
       <div className="nav flex items-center gap-10 flex-row-reverse">
         <div className="menuIcon">
-          <span className="relative z-50">
-            {menuToggle ? (
-              <IoClose
-                onClick={() => setMenuToggle(!menuToggle)}
-                className="text-white text-5xl font-bold lg:cursor-pointer"
-              />
-            ) : (
-              <HiMenuAlt3
-                onClick={() => setMenuToggle(!menuToggle)}
-                className="text-[#FF01F4] text-5xl font-bold lg:cursor-pointer"
-              />
-            )}
-          </span>
+          <div className={`menuicon ${menuClass} z-50`} onClick={toggleMenu}>
+            <span className="line-1 bg-primary"></span>
+            <span className="line-2 bg-primary"></span>
+            <span className="line-3 bg-primary"></span>
+          </div>
           <div
             className={`menu  ${
               menuToggle ? "h-screen" : "h-0"
