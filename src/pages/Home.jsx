@@ -2,7 +2,7 @@ import Hero from "../components/home/hero/Hero";
 
 const Home = () => {
   return (
-    <main>
+    <main className="w-screen overflow-hidden">
       <Hero />
     </main>
   );

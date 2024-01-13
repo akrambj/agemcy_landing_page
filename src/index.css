@@ -3,7 +3,9 @@
 @tailwind utilities; 
 
 
-
+body {
+  overflow-x: hidden ;
+}
 
 
 .head-btn {
@@ -78,3 +80,11 @@
 } 
 
 
+
+
+.hero {
+  background: url(assets/imgs/heroBg.svg);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: contain;
+}
