@@ -2,6 +2,15 @@
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    screens: {
+      xs: "400px",
+      "2xs": "450px",
+      sm: "600px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       backgroundColor: {
         primary: "rgb(247, 78, 161)",
