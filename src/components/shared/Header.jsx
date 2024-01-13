@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa"; // Corrected import
+
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-
+import Socials from "../data/socials";
 const Header = () => {
   const [menuToggle, setMenuToggle] = useState(false);
   const [selectedLink, setSelectedLink] = useState(0);
@@ -15,13 +14,6 @@ const Header = () => {
     { name: "agency", link: "#agency" },
     { name: "values", link: "#values" },
     { name: "FAQs", link: "#FAQs" },
-  ];
-
-  const socialMedia = [
-    { icon: <FaTwitter />, link: "https://twitter.com/x" },
-    { icon: <FaInstagram />, link: "https://www.instagram.com/" },
-    { icon: <FaLinkedinIn />, link: "https://www.linkedin.com/" },
-    { icon: <FaFacebookF />, link: "https://www.facebook.com/" },
   ];
 
   const services = [
@@ -142,7 +134,7 @@ const Header = () => {
                   )}
                   <div className="flex items-center justify-between px-4">
                     <ul className="w-full flex items-center gap-2">
-                      {socialMedia.map((media, index) => (
+                      {Socials.map((media, index) => (
                         <motion.li
                           key={index}
                           variants={itemVariants}
@@ -179,7 +171,7 @@ const Header = () => {
                         className=" text-2xl w-[230px] text-white font-black hidden lg:block"
                         variants={itemVariants}
                       >
-                        Let's get cracking
+                        Let{"'"}s get cracking
                       </motion.h2>
                     </motion.div>
                   </div>
