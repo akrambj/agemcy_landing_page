@@ -75,7 +75,7 @@ const Header = () => {
 
   console.log("show", showServices);
   return (
-    <header className="w-screen flex items-center justify-between p-5 lg:px-[100px] lg:py-12 z-[99] ">
+    <header className="fixed md:block w-screen flex items-center justify-between p-5 lg:px-[100px] lg:py-12 z-[99] ">
       <div className="logo"></div>
       <div className="nav flex items-center gap-10 flex-row-reverse">
         <div className="menuIcon">
