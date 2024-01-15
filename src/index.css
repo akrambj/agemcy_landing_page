@@ -91,3 +91,7 @@ body {
 
 
 
+
+.service-overlay {
+  background-color: rgba(254,74,226, 0.7);
+}
