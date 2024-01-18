@@ -1,61 +1,106 @@
-import scrollVideo from "../../../assets/videos/scrollVid.mp4";
-import scrollImg from "../../../assets/imgs/scrollImg.png";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import Button from "../../UI/Button";
+import webDevService from "../../../assets/imgs/webDevService.svg";
+import designService from "../../../assets/imgs/designService.jpg";
+import photographyService from "../../../assets/imgs/photographyService.jpg";
+import marketingService from "../../../assets/imgs/marketingService.jpg";
+import webDevServiceImg from "../../../assets/imgs/webDevServiceImg.svg";
+import { motion, useAnimation } from "framer-motion";
 
 const Services = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const services = [
+    {
+      title: "website",
+      des: "Let’s face it, first impressions matter. Your website’s an opportunity to wow your audience, so why waste it with bad design? Because brands win new fans when they’re brave enough to go beyond their creative comfort zone.",
+      bg: webDevService,
+      img: webDevServiceImg,
+    },
+    {
+      title: "design",
+      des: "Let’s face it, first impressions matter. Your website’s an opportunity to wow your audience, so why waste it with bad design? Because brands win new fans when they’re brave enough to go beyond their creative comfort zone02.",
+      bg: designService,
+      img: webDevServiceImg,
+    },
+    {
+      title: "photography",
+      des: "Let’s face it, first impressions matter. Your website’s an opportunity to wow your audience, so why waste it with bad design? Because brands win new fans when they’re brave enough to go beyond their creative comfort zone.03",
+      bg: photographyService,
+      img: webDevServiceImg,
+    },
+    {
+      title: "marketing",
+      des: "Let’s face it, first impressions matter. Your website’s an opportunity to wow your audience, so why waste it with bad design? Because brands win new fans when they’re brave enough to go beyond their creative comfort zone.04",
+      bg: marketingService,
+      img: webDevServiceImg,
+    },
+  ];
 
-  const handleScroll = () => {
-    const scroll = window.scrollY;
-    const scrollThreshold = 1;
-
-    if (scroll > scrollThreshold && !isScrolled) {
-      setIsScrolled(true);
-    } else if (scroll <= scrollThreshold && isScrolled) {
-      setIsScrolled(false);
-    }
-  };
+  const [serviceIndex, setServiceIndex] = useState(0);
+  const [sliderItems, setSliderItems] = useState(services[serviceIndex]);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [isScrolled]);
+    setSliderItems(services[serviceIndex]);
+  }, [serviceIndex]);
 
-  console.log("scroll:", isScrolled);
+  const handleSliderIndex = (itemIndex) => {
+    setServiceIndex(itemIndex);
+  };
 
   return (
-    <section className="w-full h-screen services overflow-hidden relative flex items-center justify-center">
-      <motion.div
-        className={`w-full h-full absolute ${
-          isScrolled ? "hidden" : ""
-        } z-[99]`}
-        initial={{ scale: 1 }}
-        animate={{ scale: isScrolled ? 1.5 : 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <img className="w-full h-full object-cover" src={scrollImg} alt="" />
-      </motion.div>
-      <motion.div
-        className={` ${
-          isScrolled ? "w-full h-full " : "w-[31%] h-[330px] mx-auto"
-        } z-0 relative`}
-        animate={{
-          width: isScrolled ? "100%" : "31%",
-          height: isScrolled ? "100%" : "330px",
-        }}
-        transition={{ duration: 0.5 }}
-      >
-        <video
-          className={`w-full h-full object-cover`}
-          src={scrollVideo}
-          autoPlay
-          muted
-          loop={true}
-        />
-      </motion.div>
+    <section className="w-screen h-screen overflow-hidden md:flex md:flex-col md:justify-center">
+      <div className="w-full h-full md:h-[70%] lg:h-[95%] flex flex-col items-center justify-center relative md:flex-row border-[5px] border-[#0A0A0A]">
+        <div
+          style={{
+            backgroundImage: `url(${sliderItems.bg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+          className="w-full h-[30%] relative md:h-full md:w-[50%]"
+        >
+          <div className="w-full h-full absolute top-0 left-0  service-overlay"></div>
+        </div>
+        <div className="w-full text-center h-[70%] md:w-[60%] md:h-full bg-[#0A0A0A]  text-white flex  justify-end md:justify-center lg:justify-around lg:py-10 pb-3 flex-col gap-7 md:gap-4">
+          <h2 className="hidden md:block w-[140px] text-center bg-primary py-1 text-[#0A0A0A] font-black lg:py-2 lg:w-[170px] lg:text-xl">
+            OUR SERVICES
+          </h2>
+          <div className="flex flex-col md:w-[70%] md:mx-auto md:text-left  lg:w-[80%] lg:gap-5">
+            <div>
+              <h5 className="text-xl font-semibold">We build you an amazing</h5>
+              <h1 className="text-5xl uppercase font-bold text-primary">
+                {sliderItems.title}
+              </h1>
+            </div>
+            <div className="absolute top-[5%] w-[90%] left-5 h-[35%] md:w-[50%] md:h-[60%] md:left-[5%] md:top-[20%] lg:w-[51%] lg:h-[65%] ">
+              <img
+                className="w-full h-full object-contain"
+                src={sliderItems.img}
+                alt=""
+              />
+            </div>
+            <p className="hidden lg:block text-[#9F9F9F]  lg:mx-0  2xs:w-[80%] sm:w-[70%] md:w-[53%] md:mx-20 text-center mx-auto  md:text-left  lg:text-lg lg:w-[64%]">
+              {sliderItems.des}
+            </p>
+          </div>
+          <p className="text-[#9F9F9F] lg:hidden 2xs:w-[80%] sm:w-[70%] md:w-[53%] md:mx-20 text-center mx-auto  md:text-left ">
+            {sliderItems.des}
+          </p>
+          <div className="text-center md:text-left md:w-[70%] mx-auto  lg:w-[80%]">
+            <Button name={"Start your project"} />
+          </div>
+          <ul className="flex justify-center items-center gap-2  md:items-start md:w-[50%] lg:w-[30%]">
+            {services.map((service, index) => (
+              <li
+                onClick={() => handleSliderIndex(index)}
+                className={`${
+                  serviceIndex === index ? "bg-primary" : "bg-gray-300"
+                } w-[10px] h-[10px] md:w-[12px] md:h-[12px] rounded-full lg:cursor-pointer`}
+                key={index}
+              ></li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </section>
   );
 };
