@@ -1,6 +1,6 @@
 const Button = ({ name }) => {
   return (
-    <button className="bg-[#FF01F4] text-white  w-[200px] text-xl font-bold rounded-3xl py-2">
+    <button className="bg-[#FF01F4] text-white  w-[200px] text-xl font-bold rounded-3xl py-2 md:py-1">
       {name}
     </button>
   );
