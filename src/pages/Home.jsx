@@ -4,7 +4,7 @@ import Services from "../components/home/services/Services";
 
 const Home = () => {
   return (
-    <main className="w-screen overflow-x-hidden">
+    <main className="w-screen overflow-x-hidden flex flex-col gap-5">
       <Animation />
       <Hero />
       <Services />

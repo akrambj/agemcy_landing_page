@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import Button from "../../UI/Button";
 import webDevService from "../../../assets/imgs/webDevService.svg";
+import designService from "../../../assets/imgs/designService.jpg";
+import photographyService from "../../../assets/imgs/photographyService.jpg";
+import marketingService from "../../../assets/imgs/marketingService.jpg";
 import webDevServiceImg from "../../../assets/imgs/webDevServiceImg.svg";
+import { motion, useAnimation } from "framer-motion";
 
 const Services = () => {
   const services = [
@@ -12,21 +16,21 @@ const Services = () => {
       img: webDevServiceImg,
     },
     {
-      title: "website02",
+      title: "design",
       des: "Let’s face it, first impressions matter. Your website’s an opportunity to wow your audience, so why waste it with bad design? Because brands win new fans when they’re brave enough to go beyond their creative comfort zone02.",
-      bg: "red",
+      bg: designService,
       img: webDevServiceImg,
     },
     {
-      title: "website03",
+      title: "photography",
       des: "Let’s face it, first impressions matter. Your website’s an opportunity to wow your audience, so why waste it with bad design? Because brands win new fans when they’re brave enough to go beyond their creative comfort zone.03",
-      bg: "blue",
+      bg: photographyService,
       img: webDevServiceImg,
     },
     {
-      title: "website04",
+      title: "marketing",
       des: "Let’s face it, first impressions matter. Your website’s an opportunity to wow your audience, so why waste it with bad design? Because brands win new fans when they’re brave enough to go beyond their creative comfort zone.04",
-      bg: "green",
+      bg: marketingService,
       img: webDevServiceImg,
     },
   ];
@@ -44,7 +48,7 @@ const Services = () => {
 
   return (
     <section className="w-screen h-screen overflow-hidden md:flex md:flex-col md:justify-center">
-      <div className="w-full h-full md:h-[70%] lg:h-[90%] flex flex-col items-center justify-center relative md:flex-row border-[5px] border-[#0A0A0A]">
+      <div className="w-full h-full md:h-[70%] lg:h-[95%] flex flex-col items-center justify-center relative md:flex-row border-[5px] border-[#0A0A0A]">
         <div
           style={{
             backgroundImage: `url(${sliderItems.bg})`,
@@ -57,7 +61,7 @@ const Services = () => {
           <div className="w-full h-full absolute top-0 left-0  service-overlay"></div>
         </div>
         <div className="w-full text-center h-[70%] md:w-[60%] md:h-full bg-[#0A0A0A]  text-white flex  justify-end md:justify-center lg:justify-around lg:py-10 pb-3 flex-col gap-7 md:gap-4">
-          <h2 className="hidden md:block w-[140px] text-center bg-primary py-1 text-[#0A0A0A] font-bold">
+          <h2 className="hidden md:block w-[140px] text-center bg-primary py-1 text-[#0A0A0A] font-black lg:py-2 lg:w-[170px] lg:text-xl">
             OUR SERVICES
           </h2>
           <div className="flex flex-col md:w-[70%] md:mx-auto md:text-left  lg:w-[80%] lg:gap-5">
@@ -67,7 +71,7 @@ const Services = () => {
                 {sliderItems.title}
               </h1>
             </div>
-            <div className="absolute top-[5%] w-[90%] left-5 h-[35%] md:w-[50%] md:h-[60%] md:left-[5%] md:top-[20%] lg:w-[53%] lg:h-[65%] ">
+            <div className="absolute top-[5%] w-[90%] left-5 h-[35%] md:w-[50%] md:h-[60%] md:left-[5%] md:top-[20%] lg:w-[51%] lg:h-[65%] ">
               <img
                 className="w-full h-full object-contain"
                 src={sliderItems.img}
