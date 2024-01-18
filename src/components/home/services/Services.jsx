@@ -5,7 +5,6 @@ import designService from "../../../assets/imgs/designService.jpg";
 import photographyService from "../../../assets/imgs/photographyService.jpg";
 import marketingService from "../../../assets/imgs/marketingService.jpg";
 import webDevServiceImg from "../../../assets/imgs/webDevServiceImg.svg";
-import { motion, useAnimation } from "framer-motion";
 
 const Services = () => {
   const services = [
@@ -48,7 +47,7 @@ const Services = () => {
 
   return (
     <section className="w-screen h-screen overflow-hidden md:flex md:flex-col md:justify-center">
-      <div className="w-full h-full md:h-[70%] lg:h-[95%] flex flex-col items-center justify-center relative md:flex-row border-[5px] border-[#0A0A0A]">
+      <div className="w-full h-full md:h-[70%] lg:h-[95%] flex flex-col items-center justify-center relative md:flex-row border-[7px] border-[#0A0A0A]">
         <div
           style={{
             backgroundImage: `url(${sliderItems.bg})`,
