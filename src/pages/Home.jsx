@@ -1,3 +1,4 @@
+import Faq from "../components/home/FAQ/Faq";
 import Animation from "../components/home/animation/Animation";
 import Hero from "../components/home/hero/Hero";
 import Inovating from "../components/home/section/Inovating";
@@ -12,6 +13,7 @@ const Home = () => {
       <Services />
       <Inovating />
       <OurValues />
+      <Faq />
     </main>
   );
 };
