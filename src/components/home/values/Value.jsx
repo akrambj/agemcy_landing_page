@@ -1,13 +1,9 @@
 const Value = ({ value, valIndex, index }) => {
-  console.log("valIndex:", valIndex);
-  console.log("index:", index);
-  console.log("Condition:", valIndex === index);
-
   return (
     <div
       className={`${
         valIndex === index ? "bg-primary " : "bg-white "
-      } w-[100px] h-[100px] flex items-center justify-center  transition-all duration-300 ease-in`}
+      } w-[100px] h-[100px] lg:w-[130px] lg:h-[130px] flex items-center justify-center  transition-all duration-300 ease-in`}
     >
       <h5
         className={`${
