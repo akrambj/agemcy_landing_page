@@ -1,55 +1,68 @@
 import scrollVideo from "../../../assets/videos/scrollVid.mp4";
-import scrollImg from "../../../assets/imgs/scrollImg.png";
+import animation from "../../../assets/imgs/animation.png";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 const Animation = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const controls = useAnimation();
+  const [scrollY, setScrollY] = useState(0);
+  const [animationComplete, setAnimationComplete] = useState(false);
 
   const handleScroll = () => {
-    const scroll = window.scrollY;
-    const scrollThreshold = 1;
-
-    if (scroll > scrollThreshold && !isScrolled) {
-      setIsScrolled(true);
-    } else if (scroll <= scrollThreshold && isScrolled) {
-      setIsScrolled(false);
-    }
+    setScrollY(window.scrollY);
   };
+
+  useEffect(() => {
+    const startAnimation = async () => {
+      await controls.start({ scale: 1 + (scrollY * 40) / window.innerHeight });
+      // Do not set animationComplete to true here
+    };
+
+    const onComplete = () => {
+      setAnimationComplete(true);
+    };
+
+    startAnimation().then(onComplete); // Set animationComplete after animation is complete
+  }, [scrollY, controls]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isScrolled]);
+  }, []);
 
-  console.log("scroll:", isScrolled);
+  const threshold = 200 * window.innerHeight;
+  const overflowProperty = scrollY < threshold ? "hidden" : "scroll";
+  const sectionHeight = animationComplete ? "100vh" : `${window.innerHeight}px`;
 
   return (
-    <section className="w-full h-screen services overflow-hidden relative flex items-center justify-center">
+    <section
+      className={`${
+        animationComplete ? "relative " : "fixed z-[999] top-0 left-0 "
+      } w-full duration-300 services flex items-center justify-center`}
+      style={{ overflow: overflowProperty, height: sectionHeight }}
+    >
       <motion.div
-        className={`w-full h-full absolute ${
-          isScrolled ? "hidden" : ""
-        } z-[99]`}
-        initial={{ scale: 1 }}
-        animate={{ scale: isScrolled ? 1.5 : 1 }}
-        transition={{ duration: 0.5 }}
+        className="w-full h-full absolute z-[99]"
+        initial={{ rotate: 0 }}
+        animate={controls}
+        transition={{ duration: 0.2 }}
+        onAnimationComplete={() => setAnimationComplete(true)}
+        style={{ position: "fixed", top: 0, left: 0 }}
       >
-        <img className="w-full h-full object-cover" src={scrollImg} alt="" />
+        <img
+          className="w-full h-full object-cover"
+          src={animation}
+          alt="animation"
+        />
       </motion.div>
       <motion.div
-        className={` ${
-          isScrolled ? "w-full h-full " : "w-[31%] h-[330px] mx-auto"
-        } z-0 relative`}
-        animate={{
-          width: isScrolled ? "100%" : "31%",
-          height: isScrolled ? "100%" : "330px",
-        }}
+        className={`z-0 relative h-full w-full`}
         transition={{ duration: 0.5 }}
       >
         <video
-          className={`w-full h-full object-cover`}
+          className="w-full h-full object-cover"
           src={scrollVideo}
           autoPlay
           muted
