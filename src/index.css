@@ -63,7 +63,7 @@ body {
 }
 
 .openMenu .line-1 {
-  transform: translateY(100%) rotate(-45deg);
+  transform:  rotate(-45deg);
   background-color: white;
   width: 95%;
   height: 4px;
@@ -102,3 +102,16 @@ body {
     background-color: rgba(254, 74, 226, 0.9)
   }
 }
+
+
+
+
+.animation {
+  background: url(assets/imgs/animation.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+

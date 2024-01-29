@@ -78,7 +78,7 @@ const Header = () => {
     <header className="fixed md:block w-screen flex items-center justify-between p-5 lg:px-[100px] lg:py-12 z-[99] ">
       <div className="logo"></div>
       <div className="nav flex items-center gap-10 flex-row-reverse">
-        <div className="menuIcon">
+        <div className="menuIcon z-[999] cursor-pointer">
           <div
             className={`menuicon z-50 ${menuToggle ? "openMenu" : ""}`}
             onClick={toggleMenu}
