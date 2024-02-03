@@ -1,5 +1,6 @@
 import scrollVideo from "../../../assets/videos/scrollVid.mp4";
-import animation from "../../../assets/imgs/animation.png";
+import sky from "../../../assets/imgs/animation/sky.webp";
+import stars from "../../../assets/imgs/animation/stars.webp";
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
@@ -44,7 +45,7 @@ const Animation = () => {
       style={{ overflow: overflowProperty, height: sectionHeight }}
     >
       <motion.div
-        className="w-full h-full absolute z-[99]"
+        className="w-full h-full absolute z-[98]"
         initial={{ rotate: 0 }}
         animate={controls}
         transition={{ duration: 0.2 }}
@@ -52,10 +53,11 @@ const Animation = () => {
         style={{ position: "fixed", top: 0, left: 0 }}
       >
         <img
-          className="w-full h-full object-cover"
-          src={animation}
-          alt="animation"
+          className="absolute -top-[30%] opacity-50 hover:opacity-100 duration-300  z-[99]"
+          src={stars}
+          alt="stars"
         />
+        <img className="w-full h-full object-cover" src={sky} alt="animation" />
       </motion.div>
       <motion.div
         className={`z-0 relative h-full w-full`}

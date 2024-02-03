@@ -46,58 +46,46 @@ const Services = () => {
   };
 
   return (
-    <section className="w-screen h-screen overflow-hidden md:flex md:flex-col md:justify-center">
-      <div className="w-full h-full md:h-[70%] lg:h-[95%] flex flex-col items-center justify-center relative md:flex-row border-[7px] border-[#0A0A0A]">
-        <div
-          style={{
-            backgroundImage: `url(${sliderItems.bg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-          className="w-full h-[30%] relative md:h-full md:w-[50%]"
-        >
-          <div className="w-full h-full absolute top-0 left-0  service-overlay"></div>
-        </div>
-        <div className="w-full text-center h-[70%] md:w-[60%] md:h-full bg-[#0A0A0A]  text-white flex  justify-end md:justify-center lg:justify-around lg:py-10 pb-3 flex-col gap-7 md:gap-4">
+    <section className="w-screen h-screen overflow-hidden md:flex md:flex-col md:justify-center services">
+      <div className="w-full h-full  flex flex-col items-center justify-center relative md:items-center md:px-10 md:flex-row-reverse ">
+        <div className="bg-red-300 w-[50%] h-full flex flex-col justify-center gap-20">
           <h2 className="hidden md:block w-[140px] text-center bg-primary py-1 text-[#0A0A0A] font-black lg:py-2 lg:w-[170px] lg:text-xl">
             OUR SERVICES
           </h2>
-          <div className="flex flex-col md:w-[70%] md:mx-auto md:text-left  lg:w-[80%] lg:gap-5">
+          <div className="flex flex-col gap-10">
             <div>
               <h5 className="text-xl font-semibold">We build you an amazing</h5>
               <h1 className="text-5xl uppercase font-bold text-primary">
                 {sliderItems.title}
               </h1>
+              <p className="hidden lg:block text-[#9F9F9F]  lg:mx-0  2xs:w-[80%] sm:w-[70%] md:w-[53%] md:mx-20 text-center mx-auto  md:text-left  lg:text-lg lg:w-[64%]">
+                {sliderItems.des}
+              </p>
             </div>
-            <div className="absolute top-[5%] w-[90%] left-5 h-[35%] md:w-[50%] md:h-[60%] md:left-[5%] md:top-[20%] lg:w-[51%] lg:h-[65%] ">
-              <img
-                className="w-full h-full object-contain"
-                src={sliderItems.img}
-                alt=""
-              />
+            <div className="text-center md:text-left md:w-[70%] mx-auto flex flex-col gap-4  lg:w-[80%]">
+              <Button name={"Start your project"} />
+              <ul className="flex justify-center items-center gap-2  md:items-start md:w-[50%] lg:w-[30%]">
+                {services.map((service, index) => (
+                  <li
+                    onClick={() => handleSliderIndex(index)}
+                    className={`${
+                      serviceIndex === index ? "bg-primary" : "bg-gray-300"
+                    } w-[10px] h-[10px] md:w-[12px] md:h-[12px] rounded-full lg:cursor-pointer`}
+                    key={index}
+                  ></li>
+                ))}
+              </ul>
             </div>
-            <p className="hidden lg:block text-[#9F9F9F]  lg:mx-0  2xs:w-[80%] sm:w-[70%] md:w-[53%] md:mx-20 text-center mx-auto  md:text-left  lg:text-lg lg:w-[64%]">
-              {sliderItems.des}
-            </p>
           </div>
-          <p className="text-[#9F9F9F] lg:hidden 2xs:w-[80%] sm:w-[70%] md:w-[53%] md:mx-20 text-center mx-auto  md:text-left ">
-            {sliderItems.des}
-          </p>
-          <div className="text-center md:text-left md:w-[70%] mx-auto  lg:w-[80%]">
-            <Button name={"Start your project"} />
+        </div>
+        <div className="w-[50%] h-full bg-green-300">
+          <div className="">
+            <img
+              className="w-full h-full object-contain"
+              src={sliderItems.img}
+              alt=""
+            />
           </div>
-          <ul className="flex justify-center items-center gap-2  md:items-start md:w-[50%] lg:w-[30%]">
-            {services.map((service, index) => (
-              <li
-                onClick={() => handleSliderIndex(index)}
-                className={`${
-                  serviceIndex === index ? "bg-primary" : "bg-gray-300"
-                } w-[10px] h-[10px] md:w-[12px] md:h-[12px] rounded-full lg:cursor-pointer`}
-                key={index}
-              ></li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>
