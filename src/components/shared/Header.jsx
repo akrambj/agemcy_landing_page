@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import Socials from "../data/socials";
+import Socials from "../data/Socials";
 import logo from "../../assets/imgs/header/logo.png";
 const Header = () => {
   const [menuToggle, setMenuToggle] = useState(false);
