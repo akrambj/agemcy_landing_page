@@ -83,13 +83,19 @@ body {
 
 
 .hero {
-  background: url(assets/imgs/heroBg.svg);
+  background: url(assets/imgs/heroBg.png);
   background-repeat: no-repeat;
-  background-position: top left;
-  background-size: contain;
+  background-position: center;
+  background-size: cover;
 }
 
 
+.services {
+  background-image: url(assets/imgs/services.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 
 .service-overlay {
@@ -115,3 +121,9 @@ body {
 
 
 
+.blury-bg {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 30px;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+}
