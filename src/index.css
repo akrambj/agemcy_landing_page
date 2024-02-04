@@ -3,10 +3,32 @@
 @tailwind utilities; 
 
 
-body {
-  overflow-x: hidden ;
+
+:root {
+  --roboto: 'Roboto', sans-serif;
+    --text-shadow-color: #000;
+      --text-shadow-offset-x: 1px;
+      --text-shadow-offset-y: 1px;
+      --text-shadow-blur: 5px;
+  
 }
 
+
+body {
+  overflow-x: hidden;
+  font-family: var(--roboto);
+}
+
+.Textshadow {
+  text-shadow: var(--text-shadow-offset-x) var(--text-shadow-offset-y) var(--text-shadow-blur) var(--text-shadow-color);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #0075FF 10%, #F74EA1 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
 .head-btn {
   background-color:rgba(0, 0, 0, 0.25);

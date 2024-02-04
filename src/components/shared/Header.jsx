@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -122,7 +122,7 @@ const Header = () => {
                   exit="exit"
                   className={`menu h-screen z-10 -top-5 lg:-top-12 bg-primary px-0 overflow-hidden absolute -left-5 lg:-left-28 w-screen flex flex-col items-center justify-center`}
                 >
-                  <ul className="w-full h-full flex flex-col justify-center gap-10 px-10 ">
+                  <ul className="w-full h-full flex flex-col justify-center gap-10 px-5 md:px-10 ">
                     {menuItems.map((menuItem, index) => (
                       <motion.li
                         onMouseOver={() =>
@@ -158,7 +158,7 @@ const Header = () => {
                         ))}
                       </ul>
                     )}
-                    <div className="flex items-center justify-between px-4">
+                    <div className="flex items-center justify-between  ">
                       <ul className="w-full flex items-center gap-2">
                         {Socials.map((media, index) => (
                           <motion.li
