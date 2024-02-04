@@ -8,12 +8,12 @@ import OurValues from "../components/home/values/OurValues";
 const Home = () => {
   return (
     <main className="w-screen overflow-x-hidden">
-      <Animation />
+      {/* <Animation /> */}
       <Hero />
-      <Services />
-      <Inovating />
-      <OurValues />
-      <Faq />
+      {/* <Services /> */}
+      {/* <Inovating /> */}
+      {/* <OurValues /> */}
+      {/* <Faq /> */}
     </main>
   );
 };
