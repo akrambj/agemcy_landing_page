@@ -60,7 +60,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="w-screen h-screen overflow-hidden md:flex md:flex-col md:justify-center relative"
+      className="w-screen  h-screen overflow-hidden md:flex md:flex-col md:justify-center relative"
     >
       <div className="hidden md:block absolute left-0 top-[60%] w-[5%] opacity-50 hover:opacity-100 duration-300">
         <img className="" src={planet02} alt="planet0" />
@@ -87,10 +87,7 @@ const Services = () => {
             />
           </div>
         </div>
-        <div
-          // style={{ transform: `translateX(${serviceIndex * 100}%)` }}
-          className="h-full w-[50%] flex flex-col items-center md:pl-32 md:pt-6 md:items-start md:text-left md:justify-between text-center gap-4 justify-center md:h-[70%] "
-        >
+        <div className="h-full md:w-[50%] flex flex-col items-center md:pl-32 md:pt-6 md:items-start md:text-left md:justify-between text-center gap-4 justify-center md:h-[70%] ">
           <h2 className="hidden md:block w-[140px] md:cursor-pointer hover:bg-white hover:text-primary duration-300 text-center bg-primary py-1 text-[#0A0A0A] font-black lg:py-2 lg:w-[170px] lg:text-xl">
             OUR SERVICES
           </h2>
@@ -105,7 +102,7 @@ const Services = () => {
               {sliderItems.des}
             </p>
           </div>
-          <p className="md:hidden  text-[#9F9F9F]  lg:mx-0  2xs:w-[80%] sm:w-[70%] md:w-[53%] md:mx-20 text-center mx-auto  md:text-left  lg:text-lg lg:w-[64%]">
+          <p className="text-white w-[90%] mx-auto md:hidden">
             {sliderItems.des}
           </p>
           <div>
