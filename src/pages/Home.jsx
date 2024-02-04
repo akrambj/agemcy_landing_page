@@ -9,8 +9,8 @@ const Home = () => {
   return (
     <main className="w-screen overflow-x-hidden">
       {/* <Animation /> */}
-      <Hero />
-      {/* <Services /> */}
+      {/* <Hero /> */}
+      <Services />
       {/* <Inovating /> */}
       {/* <OurValues /> */}
       {/* <Faq /> */}

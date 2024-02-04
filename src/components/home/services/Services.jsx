@@ -5,6 +5,9 @@ import designService from "../../../assets/imgs/designService.jpg";
 import photographyService from "../../../assets/imgs/photographyService.jpg";
 import marketingService from "../../../assets/imgs/marketingService.jpg";
 import webDevServiceImg from "../../../assets/imgs/webDevServiceImg.svg";
+import background from "../../../assets/imgs/services/background.png";
+import backgroundDesktop from "../../../assets/imgs/services/backgroundDesktop.png";
+import planet02 from "../../../assets/imgs/services/planet02.png";
 
 const Services = () => {
   const services = [
@@ -36,6 +39,15 @@ const Services = () => {
 
   const [serviceIndex, setServiceIndex] = useState(0);
   const [sliderItems, setSliderItems] = useState(services[serviceIndex]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setServiceIndex((prevIndex) =>
+        prevIndex === services.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [services.length]);
 
   useEffect(() => {
     setSliderItems(services[serviceIndex]);
@@ -46,46 +58,70 @@ const Services = () => {
   };
 
   return (
-    <section className="w-screen h-screen overflow-hidden md:flex md:flex-col md:justify-center services">
-      <div className="w-full h-full  flex flex-col items-center justify-center relative md:items-center md:px-10 md:flex-row-reverse ">
-        <div className="bg-red-300 w-[50%] h-full flex flex-col justify-center gap-20">
-          <h2 className="hidden md:block w-[140px] text-center bg-primary py-1 text-[#0A0A0A] font-black lg:py-2 lg:w-[170px] lg:text-xl">
-            OUR SERVICES
-          </h2>
-          <div className="flex flex-col gap-10">
-            <div>
-              <h5 className="text-xl font-semibold">We build you an amazing</h5>
-              <h1 className="text-5xl uppercase font-bold text-primary">
-                {sliderItems.title}
-              </h1>
-              <p className="hidden lg:block text-[#9F9F9F]  lg:mx-0  2xs:w-[80%] sm:w-[70%] md:w-[53%] md:mx-20 text-center mx-auto  md:text-left  lg:text-lg lg:w-[64%]">
-                {sliderItems.des}
-              </p>
-            </div>
-            <div className="text-center md:text-left md:w-[70%] mx-auto flex flex-col gap-4  lg:w-[80%]">
-              <Button name={"Start your project"} />
-              <ul className="flex justify-center items-center gap-2  md:items-start md:w-[50%] lg:w-[30%]">
-                {services.map((service, index) => (
-                  <li
-                    onClick={() => handleSliderIndex(index)}
-                    className={`${
-                      serviceIndex === index ? "bg-primary" : "bg-gray-300"
-                    } w-[10px] h-[10px] md:w-[12px] md:h-[12px] rounded-full lg:cursor-pointer`}
-                    key={index}
-                  ></li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="w-[50%] h-full bg-green-300">
-          <div className="">
+    <section
+      id="services"
+      className="w-screen h-screen overflow-hidden md:flex md:flex-col md:justify-center relative"
+    >
+      <div className="hidden md:block absolute left-0 top-[60%] w-[5%] opacity-50 hover:opacity-100 duration-300">
+        <img className="" src={planet02} alt="planet0" />
+      </div>
+      <div className="absolute left-0 top-0 -z-10 w-full ">
+        <img
+          className="md:hidden w-full h-full object-cover"
+          src={background}
+          alt=""
+        />
+        <img
+          className="hidden md:block w-full h-full object-cover"
+          src={backgroundDesktop}
+          alt=""
+        />
+      </div>
+      <div className="w-full h-full flex flex-col md:flex-row items-center justify-center">
+        <div className="w-full md:w-[50%] flex items-center pt-10 justify-center h-[45%] md:h-full ">
+          <div className="w-[90%] md:w-[80%]">
             <img
               className="w-full h-full object-contain"
               src={sliderItems.img}
-              alt=""
+              alt="service"
             />
           </div>
+        </div>
+        <div
+          // style={{ transform: `translateX(${serviceIndex * 100}%)` }}
+          className="h-full w-[50%] flex flex-col items-center md:pl-32 md:pt-6 md:items-start md:text-left md:justify-between text-center gap-4 justify-center md:h-[70%] "
+        >
+          <h2 className="hidden md:block w-[140px] md:cursor-pointer hover:bg-white hover:text-primary duration-300 text-center bg-primary py-1 text-[#0A0A0A] font-black lg:py-2 lg:w-[170px] lg:text-xl">
+            OUR SERVICES
+          </h2>
+          <div className="md:flex md:flex-col md:gap-5">
+            <h5 className="text-base font-semibold text-white md:text-xl">
+              We build you an amazing
+            </h5>
+            <h1 className="text-4xl md:text-6xl uppercase font-bold text-primary">
+              {sliderItems.title}
+            </h1>
+            <p className="hidden md:block md:text-2xl  text-[#9F9F9F]  lg:mx-0  2xs:w-[80%] sm:w-[70%] md:w-[53%] md:mx-20 text-center mx-auto  md:text-left   lg:w-[64%]">
+              {sliderItems.des}
+            </p>
+          </div>
+          <p className="md:hidden  text-[#9F9F9F]  lg:mx-0  2xs:w-[80%] sm:w-[70%] md:w-[53%] md:mx-20 text-center mx-auto  md:text-left  lg:text-lg lg:w-[64%]">
+            {sliderItems.des}
+          </p>
+          <div>
+            <Button name={"Start your project"} />
+          </div>
+          <ul className="flex justify-center md:justify-start items-center gap-2 md:px-4 md:items-start md:w-[50%] lg:w-[30%]">
+            {services.map((service, index) => (
+              <li
+                onClick={() => handleSliderIndex(index)}
+                className={`${
+                  serviceIndex === index ? "bg-primary" : "bg-gray-300"
+                } w-[10px] h-[10px] md:w-[14px] md:h-[14px] rounded-full lg:cursor-pointer duration-300`}
+                key={index}
+              ></li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
