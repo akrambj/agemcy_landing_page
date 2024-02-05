@@ -6,7 +6,7 @@ import background from "../assets/imgs/thirs/background.png";
 const ThirdSection = () => {
   return (
     <section className="relative">
-      <div className="absolute  w-full h-full top-0 left-0  -z-10">
+      <div className="absolute  w-full h-full top-0 left-0 -z-10 ">
         <img className="w-full h-full object-cover" src={background} alt="" />
       </div>
       <Inovating />

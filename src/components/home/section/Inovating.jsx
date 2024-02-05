@@ -6,9 +6,9 @@ const Inovating = () => {
           <h2 className="uppercase font-bold text-4xl Textshadow">
             INNOVATIVE MARKETING
           </h2>
-          <h4 className="text-4xl text-[#1E1E1E] sm:hidden">For</h4>
+          <h4 className="text-4xl text-white sm:hidden">For</h4>
           <h2 className="uppercase font-bold text-4xl text-primary">
-            <span className="hidden sm:inline text-4xl capitalize font-medium text-white">
+            <span className="hidden sm:inline text-4xl capitalize font-medium text-white ">
               For
             </span>{" "}
             Modern World

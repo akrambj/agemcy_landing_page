@@ -41,7 +41,7 @@ const Faq = () => {
     <section className="w-screen h-screen oveflow-hidden ">
       <div className="w-full h-full flex flex-col items-center justify-center gap-4">
         <div>
-          <h2 className="font-black text-3xl ">FAQs</h2>
+          <h2 className="font-black text-3xl text-white ">FAQs</h2>
         </div>
         <div className="flex flex-col items-center justify-center gap-4 text-center md:w-[600px]">
           {questionsandanswers.map((question, index) => (
