@@ -98,7 +98,7 @@ const Services = () => {
             <h1 className="text-4xl md:text-6xl uppercase font-bold text-primary">
               {sliderItems.title}
             </h1>
-            <p className="hidden md:block md:text-2xl  text-[#9F9F9F]  lg:mx-0  2xs:w-[80%] sm:w-[70%] md:w-[53%] md:mx-20 text-center mx-auto  md:text-left   lg:w-[64%]">
+            <p className="hidden md:block md:text-2xl  text-white  lg:mx-0  2xs:w-[80%] sm:w-[70%] md:w-[53%] md:mx-20 text-center mx-auto  md:text-left   lg:w-[64%]">
               {sliderItems.des}
             </p>
           </div>

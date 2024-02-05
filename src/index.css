@@ -17,7 +17,7 @@
 body {
   overflow-x: hidden;
   font-family: var(--roboto);
-}
+  background: linear-gradient(to bottom, #000000, #0E002E);}
 
 .Textshadow {
   text-shadow: var(--text-shadow-offset-x) var(--text-shadow-offset-y) var(--text-shadow-blur) var(--text-shadow-color);
