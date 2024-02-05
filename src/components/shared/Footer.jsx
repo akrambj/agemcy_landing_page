@@ -1,8 +1,12 @@
 import Socials from "../data/Socials";
+import background from "../../assets/imgs/footer/background.png";
 
 const Footer = () => {
   return (
-    <footer className="w-screen py-5 bg-[#0A0A0A] flex flex-col items-center justify-center gap-10 border-t-8 border-solid border-primary ">
+    <footer className="w-screen  py-5 relative flex flex-col items-center justify-center gap-10  border-solid ">
+      <div className="absolute top-0 left-0 w-full -z-50">
+        <img src={background} className="h-[252px] w-full" alt="" />
+      </div>
       <div className="flex flex-col items-center justify-center gap-3 text-center">
         <h2 className="text-primary font-bold text-2xl sm:text-4xl ">
           Don{"'"}t settle for mediocrity
@@ -17,7 +21,7 @@ const Footer = () => {
       <div className="flex justify-center items-center gap-5">
         {Socials.map((social, index) => (
           <a
-            className="text-primary text-xl sm:text-2xl"
+            className="text-primary text-xl sm:text-2xl hover:text-white duration-300"
             key={index}
             href={social.link}
           >

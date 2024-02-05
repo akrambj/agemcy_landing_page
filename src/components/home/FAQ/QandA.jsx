@@ -8,7 +8,7 @@ const QandA = ({ question }) => {
         isOpen
           ? "bg-primary rounded-[15px] max-h-[1000px] "
           : "bg-white border-[3px] border-[#0A0A0A] rounded-[10px] max-h-[100px]"
-      }  w-[90%] md:w-full  duration-300 ease-in cursor-pointer `}
+      }  w-[90%] md:w-full  duration-300 ease-in cursor-pointer hover:bg-primary `}
       onClick={() => setIsOpen(!isOpen)}
     >
       <h2

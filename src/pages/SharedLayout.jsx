@@ -4,7 +4,7 @@ import Footer from "../components/shared/Footer";
 
 const SharedLayout = () => {
   return (
-    <main className="w-full min-h-screen flex  justify-between flex-col">
+    <main className="w-full  flex  flex-col">
       <div>
         <Header />
       </div>
