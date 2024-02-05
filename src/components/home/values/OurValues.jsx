@@ -20,13 +20,13 @@ const OurValues = () => {
   }, []);
 
   return (
-    <section className="w-screen h-[70vh] overflow-hidden bg-[#0A0A0A] text-white  ">
+    <section className="w-screen h-[100vh] overflow-hidden  text-white  ">
       <div className="w-full h-full flex flex-col items-center justify-around py-2 md:flex-row ">
         <div className="text-center md:text-left  flex flex-col gap-3 md:w-[50%]  lg:items-center  lg:w-[40%]">
-          <h2 className="uppercase font-semibold text-3xl lg:text-5xl">
+          <h2 className="uppercase font-semibold text-3xl lg:text-5xl Textshadow">
             OUR <span className="text-primary ">VALUES</span>.
           </h2>
-          <p className="text-[#B2B2B2] text-sm w-[92%] mx-auto md:mx-0 md:w-full sm:text-lg  lg:ml-auto lg:w-[73%] xl:w-[77%] lg:text-xl lg:text-left ">
+          <p className="text-white  text-sm w-[92%] mx-auto md:mx-0 md:w-full sm:text-lg  lg:ml-auto lg:w-[74%]  lg:text-xl lg:text-left ">
             We are dedicated to embodying these values in every interaction we
             have, both with our clients and with each other.
           </p>
