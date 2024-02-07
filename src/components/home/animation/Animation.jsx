@@ -1,5 +1,5 @@
 import scrollVideo from "../../../assets/videos/scrollVid.mp4";
-import sky from "../../../assets/imgs/animation/sky.webp";
+import galaxy from "../../../assets/imgs/animation/galaxy.webp";
 import stars from "../../../assets/imgs/animation/stars.webp";
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
@@ -33,7 +33,7 @@ const Animation = () => {
     };
   }, []);
 
-  const threshold = 200 * window.innerHeight;
+  const threshold = 500 * window.innerHeight;
   const overflowProperty = scrollY < threshold ? "hidden" : "scroll";
   const sectionHeight = animationComplete ? "100vh" : `${window.innerHeight}px`;
 
@@ -57,7 +57,11 @@ const Animation = () => {
           src={stars}
           alt="stars"
         />
-        <img className="w-full h-full object-cover" src={sky} alt="animation" />
+        <img
+          className="w-full h-full object-cover"
+          src={galaxy}
+          alt="animation"
+        />
       </motion.div>
       <motion.div
         className={`z-0 relative h-full w-full`}
