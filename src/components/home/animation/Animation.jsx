@@ -45,7 +45,7 @@ const Animation = () => {
       style={{ overflow: overflowProperty, height: sectionHeight }}
     >
       <motion.div
-        className="w-full h-full absolute z-[98]"
+        className="w-full h-full absolute z-[0]"
         initial={{ rotate: 0 }}
         animate={controls}
         transition={{ duration: 0.2 }}

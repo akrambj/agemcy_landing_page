@@ -1,6 +1,6 @@
 const ContactUs = () => {
   return (
-    <section className="w-screen h-screen oveflow-hidden ">
+    <section className="w-screen h-screen oveflow-hidden">
       <div className="w-full h-full flex flex-col items-center justify-center gap-4">
         <div>
           <h2 className="w-full text-center font-black text-3xl text-[#FE4AE2] ">

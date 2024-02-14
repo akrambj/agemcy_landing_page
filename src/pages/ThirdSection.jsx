@@ -3,6 +3,7 @@ import Inovating from "../components/home/section/Inovating";
 import OurValues from "../components/home/values/OurValues";
 import background from "../assets/imgs/thirs/background.png";
 import ContactUs from "../components/home/ContactUs/ContactUs";
+import Guirri from "../components/home/Guirri/Guirri";
 
 const ThirdSection = () => {
   return (
@@ -13,6 +14,7 @@ const ThirdSection = () => {
       <Inovating />
       <OurValues />
       <Faq />
+      <Guirri />
       <ContactUs />
     </section>
   );
