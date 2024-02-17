@@ -40,7 +40,7 @@ const Animation = () => {
   return (
     <section
       className={`${
-        animationComplete ? "relative " : "fixed z-[999] top-0 left-0 "
+        animationComplete ? "relative " : "absolute z-[999] top-0 left-0 "
       } w-full duration-300 services flex items-center justify-center`}
       style={{ overflow: overflowProperty, height: sectionHeight }}
     >
@@ -58,13 +58,13 @@ const Animation = () => {
           alt="stars"
         />
         <img
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover absolute "
           src={galaxy}
           alt="animation"
         />
       </motion.div>
       <motion.div
-        className={`z-0 relative h-full w-full`}
+        className={`z-0 relative h-full w-full bg-red-300`}
         transition={{ duration: 0.5 }}
       >
         <video

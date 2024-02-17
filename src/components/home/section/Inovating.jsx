@@ -1,8 +1,16 @@
-const Inovating = () => {
+import { useEffect, useRef, useState } from "react";
+
+const Inovating = ({ scrolledToThirdSection }) => {
   return (
     <section className="w-screen h-[100vh] overflow ">
-      <div className="flex flex-col justify-center items-center gap-5 w-full h-full">
-        <div className="flex flex-col items-center gap-1 text-center text-white ">
+      <div
+        className={`flex ${
+          scrolledToThirdSection ? "inov-text" : ""
+        } flex-col justify-center items-center gap-5 w-full h-full`}
+      >
+        <div
+          className={`duration-300 flex flex-col items-center gap-1 text-center text-white`}
+        >
           <h2 className="uppercase font-bold text-4xl Textshadow">
             INNOVATIVE MARKETING
           </h2>

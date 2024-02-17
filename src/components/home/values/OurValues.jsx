@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Value from "./Value";
 
 const OurValues = () => {
@@ -19,10 +19,39 @@ const OurValues = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const [scrolledToOurValues, setScrolledToOurValues] = useState(false);
+  const ourValuesSectionRef = useRef();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (ourValuesSectionRef.current) {
+        const ourValueSectionTop = ourValuesSectionRef.current.offsetTop;
+        const ourValuesSectionHeight = ourValuesSectionRef.current.offsetHeight;
+        const isScrolled = window.scrollY >= ourValueSectionTop;
+        window.scrollY <= ourValueSectionTop + ourValuesSectionHeight;
+
+        setScrolledToOurValues(isScrolled);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [ourValuesSectionRef]);
+
   return (
-    <section className="w-screen h-[100vh] overflow-hidden  text-white  ">
+    <section
+      ref={ourValuesSectionRef}
+      className="w-screen h-[100vh] overflow-hidden  text-white"
+    >
       <div className="w-full h-full flex flex-col items-center justify-around py-2 md:flex-row ">
-        <div className="text-center md:text-left  flex flex-col gap-3 md:w-[50%]  lg:items-center  lg:w-[40%]">
+        <div
+          className={`${
+            scrolledToOurValues ? "value-text" : ""
+          } text-center md:text-left  flex flex-col gap-3 md:w-[50%]  lg:items-center  lg:w-[40%]`}
+        >
           <h2 className="uppercase font-semibold text-3xl lg:text-5xl Textshadow">
             OUR <span className="text-primary ">VALUES</span>.
           </h2>
