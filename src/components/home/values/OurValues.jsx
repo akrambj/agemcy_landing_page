@@ -26,7 +26,7 @@ const OurValues = () => {
           <h2 className="uppercase font-semibold text-3xl lg:text-5xl Textshadow">
             OUR <span className="text-primary ">VALUES</span>.
           </h2>
-          <p className="text-white  text-sm w-[92%] mx-auto md:mx-0 md:w-full sm:text-lg  lg:ml-auto lg:w-[74%]  lg:text-xl lg:text-left ">
+          <p className="text-white  text-lg w-[92%] mx-auto md:mx-0 md:w-full sm:text-lg  lg:ml-auto lg:w-[74%]  lg:text-xl lg:text-left ">
             We are dedicated to embodying these values in every interaction we
             have, both with our clients and with each other.
           </p>

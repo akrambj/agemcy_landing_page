@@ -8,7 +8,7 @@ const Home = () => {
     <main className="w-screen overflow-x-hidden">
       <Hero />
       <Services />
-      {/* <ThirdSection /> */}
+      <ThirdSection />
     </main>
   );
 };
