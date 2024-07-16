@@ -2,7 +2,7 @@ import logo from "../../../assets/imgs/logo.svg";
 import Button from "../../UI/Button";
 const Hero = () => {
   return (
-    <section className="w-full  h-[100vh] overflow-hidden  xs:py-8 flex flex-col sm:py-2  md:flex-row justify-between md:gap-4 items-center pt-10  md:pt-0 md:pb-0  pb-16  hero ">
+    <section className="w-full h-[100vh] overflow-hidden  xs:py-8 flex flex-col sm:py-2  md:flex-row justify-between md:gap-4 items-center pt-10  md:pt-0 md:pb-0  pb-16  hero ">
       <div className="w-full   py-4 flex items-center justify-center  md:w-1/2  md:h-full">
         <div className="w-[60%] xs:w-[70%]  2xs:w-[40%] md:pt-0   lg:w-[70%]  xl:w-[50%] flex items-center justify-center md:w-[70%]  xs:pt-32 flex-wrap ">
           <img
