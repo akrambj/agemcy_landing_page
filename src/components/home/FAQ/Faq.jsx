@@ -43,7 +43,7 @@ const Faq = () => {
         <div>
           <h2 className="font-black text-3xl text-white">FAQs</h2>
         </div>
-        <div className="flex flex-col items-center justify-center gap-4 text-center md:w-[600px]">
+        <div className="flex flex-col items-center justify-center gap-10 text-center md:w-[600px]">
           {questionsandanswers.map((question, index) => (
             <QandA key={index} question={question} />
           ))}
