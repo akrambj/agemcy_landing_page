@@ -76,15 +76,15 @@ const Header = () => {
 
   console.log("show", showServices);
   return (
-    <header className="fixed md:flex  w-screen flex items-center justify-between p-5 lg:px-[100px] lg:py-12 z-[99] ">
-      <div className="blury-bg lg:px-10 flex items-center justify-end px-5 lg:justify-between w-full">
-        <div className="logo w-40 hidden lg:block">
+    <header className="fixed md:flex  w-screen flex items-center justify-between py-5 lg:px-[100px] lg:py-12 z-[99] ">
+      <div className="blury-bg lg:px-10 flex items-center justify-end px-5 sm:justify-between w-full">
+        <div className="logo w-40 hidden sm:block">
           <a href="#" className="">
             <img className="w-full h-full object-cover" src={logo} alt="logo" />
           </a>
         </div>
         <div className="nav flex items-center gap-10 ">
-          <ul className="lg:flex items-center gap-4 hidden">
+          <ul className="md:flex items-center gap-4 hidden">
             {menuItems.map((menuItem, index) => (
               <li
                 key={index}
@@ -120,7 +120,7 @@ const Header = () => {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  className={`menu h-screen z-10 -top-5 lg:-top-12 bg-primary px-0 overflow-hidden absolute -left-5 lg:-left-28 w-screen flex flex-col items-center justify-center`}
+                  className={`menu h-screen z-10 -top-5 lg:-top-12 bg-primary px-0 overflow-hidden absolute -left-0 lg:-left-28 w-screen flex flex-col items-center justify-center`}
                 >
                   <ul className="w-full h-full flex flex-col justify-center gap-10 px-5 md:px-10 ">
                     {menuItems.map((menuItem, index) => (
