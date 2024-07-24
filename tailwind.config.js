@@ -13,10 +13,10 @@ export default {
     },
     extend: {
       backgroundColor: {
-        primary: "#FF01F4",
+        primary: "#0075FF",
       },
       colors: {
-        primary: "#FF01F4",
+        primary: "#0075FF",
       },
     },
   },

@@ -29,7 +29,7 @@ const Hero = () => {
           We are a digital agency helping businesses and individuals establish a
           strong digital presence. We specialize in product development.
         </p>
-        <Button name={"Let's Talk ->"} />
+        <Button name={"Let's Talk ->"}  />
       </div>
     </section>
   );

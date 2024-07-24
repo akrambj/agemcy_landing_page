@@ -1,9 +1,9 @@
 const Inovating = () => {
   return (
-    <section className="w-screen h-[100vh] overflow ">
-      <div className="flex flex-col justify-center items-center gap-5 w-full h-full">
-        <div className="flex flex-col items-center gap-1 text-center text-white ">
-          <h2 className="uppercase font-bold text-4xl Textshadow">
+    <section className="w-screen h-[100vh] overflow">
+      <div className="flex flex-col justify-center mt-96 items-center gap-5 w-full h-full">
+        <div className="flex flex-col items-center gap-1  text-center text-white ">
+          <h2 className="uppercase font-bold text-4xl  Textshadow">
             INNOVATIVE MARKETING
           </h2>
           <h4 className="text-4xl text-white sm:hidden">For</h4>
