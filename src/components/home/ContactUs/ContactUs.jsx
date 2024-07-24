@@ -3,7 +3,7 @@ const ContactUs = () => {
     <section className="w-screen h-screen oveflow-hidden">
       <div className="w-full h-full flex flex-col items-center justify-center gap-4">
         <div>
-          <h2 className="w-full text-center font-black text-3xl text-[#FE4AE2] ">
+          <h2 className="w-full text-center font-black text-3xl text-primary ">
             CONTACTEZ-NOUS
           </h2>
           <p className="text-white mt-4 max-w-[90%] lg:max-w-[70%] text-sm mx-auto sm:text-lg lg:text-xl text-center">
@@ -44,7 +44,7 @@ const ContactUs = () => {
               className="flex flex-row w-full h-44 gap-4 mx-auto bg-white p-4 rounded-3xl"
               placeholder="Message..."
             />
-            <button type="submit"></button>
+            <button type="submit" className="bg-primary text-white py-4 w-[60%] mx-auto text-xl capitalize font-semibold rounded-lg">contact us</button>
           </form>
         </div>
       </div>

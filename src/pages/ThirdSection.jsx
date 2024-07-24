@@ -13,9 +13,9 @@ const ThirdSection = () => {
       </div>
       <Inovating />
       <OurValues />
+      <Guirri />
       <Faq />
-      {/* <Guirri /> */}
-      {/* <ContactUs /> */}
+      <ContactUs />
     </section>
   );
 };

@@ -1,37 +1,31 @@
 import { useState, useEffect } from "react";
 import Button from "../../UI/Button";
 
-import webDevService from "../../../assets/imgs/webDevService.svg";
-import designService from "../../../assets/imgs/designService.jpg";
-import photographyService from "../../../assets/imgs/photographyService.jpg";
-import marketingService from "../../../assets/imgs/marketingService.jpg";
-import webDevServiceImg from "../../../assets/imgs/webDevServiceImg.svg";
+import website from "../../../assets/imgs/services/website.png";
+import graphicdesign from "../../../assets/imgs/services/graphicdesign.png";
+import marketing from "../../../assets/imgs/services/marketing.png";
 
 const Services = () => {
   const services = [
     {
       title: "website",
       des: "Let’s face it, first impressions matter. Your website’s an opportunity to wow your audience, so why waste it with bad design? Because brands win new fans when they’re brave enough to go beyond their creative comfort zone.",
-      bg: webDevService,
-      img: webDevServiceImg,
+      bg: website,
     },
     {
       title: "design",
-      des: "Let’s face it, first impressions matter. Your website’s an opportunity to wow your audience, so why waste it with bad design? Because brands win new fans when they’re brave enough to go beyond their creative comfort zone02.",
-      bg: designService,
-      img: webDevServiceImg,
+      des: "Let’s face it, first impressions matter. Your website’s an opportunity to wow your audience, so why waste it with bad design? Because brands win new fans when they’re brave enough to go beyond their creative comfort zone",
+      bg: website,
     },
     {
       title: "photography",
-      des: "Let’s face it, first impressions matter. Your website’s an opportunity to wow your audience, so why waste it with bad design? Because brands win new fans when they’re brave enough to go beyond their creative comfort zone.03",
-      bg: photographyService,
-      img: webDevServiceImg,
+      des: "Let’s face it, first impressions matter. Your website’s an opportunity to wow your audience, so why waste it with bad design? Because brands win new fans when they’re brave enough to go beyond their creative comfort zone",
+      bg: website,
     },
     {
       title: "marketing",
-      des: "Let’s face it, first impressions matter. Your website’s an opportunity to wow your audience, so why waste it with bad design? Because brands win new fans when they’re brave enough to go beyond their creative comfort zone.04",
-      bg: marketingService,
-      img: webDevServiceImg,
+      des: "Let’s face it, first impressions matter. Your website’s an opportunity to wow your audience, so why waste it with bad design? Because brands win new fans when they’re brave enough to go beyond their creative comfort zone",
+      bg: website,
     },
   ];
 
@@ -71,11 +65,11 @@ const Services = () => {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  style={{ backgroundImage: `url(${service.bg})` }}
                   className={`w-full h-full rounded-md object-cover flex-shrink-0 bg-cover bg-center flex items-center justify-center transition-opacity duration-500 ease-in-out ${
                     serviceIndex === index ? 'opacity-100' : 'opacity-0'
                   }`}
                 >
+                  <img src={service.bg} alt="" />
                 </div>
               ))}
             </div>
